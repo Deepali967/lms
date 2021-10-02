@@ -1,0 +1,23 @@
+@import "~src/assets/styles/helpers/mixins";
+
+.title-bar {
+  width: 100vw;
+  height: 8vh;
+  @include flex-container(center, space-between);
+  background: rgb(255, 147, 137, 0.3);
+  .name {
+    margin-left: 3vw;
+    @include font(25, ab, #7ea5a4);
+    animation: blink 3s ease-in infinite;
+  }
+}
+
+@keyframes blink {
+  0% {
+    color: #7ea5a4;
+  }
+
+  100% {
+    color: #5b2e1a;
+  }
+}

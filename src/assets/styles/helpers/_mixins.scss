@@ -1,0 +1,69 @@
+@import "./variables";
+
+@mixin flex-container($align: center, $justify: center, $direction: row) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin font($size, $family: regular, $color: #000000) {
+  font-size: $size/$primary-font-size + rem;
+  color: $color;
+  @if $family==ar {
+    font-family: arvo-regular;
+  } @else if $family==ab {
+    font-family: arvo-bold;
+  } @else if $family==abi {
+    font-family: arvo-boldItalic;
+  } @else if $family==ai {
+    font-family: arvo-italic;
+  }
+}
+
+@mixin box-shadow($color: #bbbbbb) {
+  box-shadow: 0px 2px 4px $color;
+}
+
+@mixin top-box-shadow($color: #bbbbbb) {
+  box-shadow: 0px 0px 20px $color;
+}
+
+@mixin bottom-box-shadow($color: #bbbbbb) {
+  box-shadow: 0px 2px 4px $color;
+}
+
+@mixin width($width) {
+  width: $width / $primary-font-size + rem;
+}
+
+@mixin height($height) {
+  height: $height / $primary-font-size + rem;
+}
+
+@mixin min-width($width) {
+  min-width: $width / $primary-font-size + rem;
+}
+
+@mixin min-height($height) {
+  min-height: $height / $primary-font-size + rem;
+}
+
+@mixin max-width($width) {
+  max-width: $width / $primary-font-size + rem;
+}
+
+@mixin max-height($height) {
+  max-height: $height / $primary-font-size + rem;
+}
+
+@mixin bg-image($path, $size: cover) {
+  background: url($basePath + $path) no-repeat top center;
+  background-size: $size;
+}
+
+@mixin cta($bgcolor, $color, $fontsize, $font) {
+  background: $bgcolor;
+  $color: $color;
+  @include font($fontsize, $font);
+}
