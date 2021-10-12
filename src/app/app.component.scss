@@ -3,7 +3,7 @@
 .app-component {
   height: 100vh;
   width: 100vw;
-  @include bg-image("common.jpg");
+  background-color: #fff;
   overflow-x: hidden;
   overflow-y: auto;
 }

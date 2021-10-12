@@ -1,23 +1,41 @@
 @font-face {
-  font-family: "arvo-bold";
-  src: url(~src/assets/fonts/arvo/Arvo-Bold.ttf) format("truetype");
+  font-family: "roboto";
+  src: url(~src/assets/fonts/roboto/roboto.ttf) format("truetype");
   font-weight: 700;
 }
 
 @font-face {
-  font-family: "arvo-boldItalic";
-  src: url(~src/assets/fonts/arvo/Arvo-BoldItalic.ttf) format("truetype");
+  font-family: "roboto-medium";
+  src: url(~src/assets/fonts/roboto/roboto-medium.ttf) format("truetype");
   font-weight: 700;
 }
 
 @font-face {
-  font-family: "arvo-italic";
-  src: url(~src/assets/fonts/arvo/Arvo-Italic.ttf) format("truetype");
+  font-family: "roboto-light";
+  src: url(~src/assets/fonts/roboto/roboto-light.ttf) format("truetype");
   font-weight: 700;
 }
 
 @font-face {
-  font-family: "arvo-regular";
-  src: url(~src/assets/fonts/arvo/Arvo-Regular.ttf) format("truetype");
+  font-family: "roboto-thin";
+  src: url(~src/assets/fonts/roboto/roboto-thin.ttf) format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "noto";
+  src: url(~src/assets/fonts/noto/noto.ttf) format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "noto-bold";
+  src: url(~src/assets/fonts/noto/noto-bold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "noto-italic";
+  src: url(~src/assets/fonts/noto/noto-italic.ttf) format("truetype");
   font-weight: 700;
 }

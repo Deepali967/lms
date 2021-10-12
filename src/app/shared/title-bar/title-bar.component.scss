@@ -4,20 +4,47 @@
   width: 100vw;
   height: 8vh;
   @include flex-container(center, space-between);
-  background: rgb(255, 147, 137, 0.3);
-  .name {
+  box-shadow: 1px 1px 9px 2px #d3d9e4;
+
+  .left {
+    @include flex-container(center, flex-start);
+    width: 40vw;
     margin-left: 3vw;
-    @include font(25, ab, #7ea5a4);
-    animation: blink 3s ease-in infinite;
+    height: 100%;
+    .name {
+      @include font(25, noto-bold, #000);
+      animation: blink 3s ease-in infinite;
+      margin-right: 5vw;
+    }
+    .browse {
+      @include font(16, roboto-medium, #000);
+      border-bottom: 1px solid #000;
+      height: 100%;
+      @include flex-container(center, center);
+      span {
+        margin-left: 0.4rem;
+        margin-top: 0.2rem;
+      }
+    }
   }
-}
 
-@keyframes blink {
-  0% {
-    color: #7ea5a4;
-  }
+  .right {
+    @include flex-container(center, flex-end);
+    width: 40vw;
+    margin-right: 3vw;
+    height: 100%;
+    .login {
+      margin-right: 5vw;
+      background-color: #bf9889;
+      padding: 0.4rem 0.7rem;
+      border: none;
+      outline: none;
+      border-radius: 0.3rem;
+      @include font(14, roboto-medium, #fff);
+    }
 
-  100% {
-    color: #5b2e1a;
+    .already-user {
+      @include font(14, roboto-medium, #000);
+    }
   }
 }
