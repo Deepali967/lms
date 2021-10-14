@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { LocalstorageService } from 'src/app/services/localstorage.service';
 import { SEARCHES } from 'src/assets/constants/search';
 
 @Component({
@@ -8,9 +9,16 @@ import { SEARCHES } from 'src/assets/constants/search';
 })
 export class CategoryComponent implements OnInit {
   categories = SEARCHES;
-  constructor() {}
+  @Output() close: EventEmitter<any> = new EventEmitter();
+
+  constructor(private localstorageService: LocalstorageService) {}
 
   ngOnInit(): void {
     console.log(this.categories);
+  }
+
+  select(category) {
+    this.localstorageService.setSelectedCategory(category);
+    this.close.emit();
   }
 }

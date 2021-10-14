@@ -7,16 +7,20 @@
     </div>
   </div>
 
-  <div class="right">
+  <div class="right" *ngIf="!headerConfig?.isProfile">
     <div class="login" (click)="toggleRegisterForm()">Sign Up</div>
     <div class="already-user" (click)="toggleLoginForm()">
       Already a user? Log in
     </div>
   </div>
+
+  <div class="right" *ngIf="headerConfig?.isProfile">
+    <img src="assets/images/title/avatar.png" alt="" />
+  </div>
 </div>
 
 <div class="categories" *ngIf="showCategoriesPopup">
-  <app-category></app-category>
+  <app-category (close)="toggleCategoriesPopup()"></app-category>
 </div>
 
 <div class="login" *ngIf="showLoginForm">

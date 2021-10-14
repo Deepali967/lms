@@ -1,0 +1,99 @@
+@import "~src/assets/styles/helpers/mixins";
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+.user-profile-component {
+  height: 100%;
+  width: 100%;
+  .title-text {
+    margin-top: 4rem;
+    text-align: center;
+    .title {
+      @include font(48, noto-bold, #011f27);
+      line-height: 1.2;
+    }
+
+    .desc {
+      @include font(20, roboto, #011f27);
+      margin-top: 1rem;
+      span {
+        @include font(20, roboto-medium, #011f27);
+      }
+    }
+  }
+
+  .searched-books-bar {
+    background: #6d90a6;
+    margin-top: 2rem;
+    width: 100%;
+    padding: 4rem;
+
+    .text {
+      @include font(20, noto-bold, #fff);
+      margin-bottom: 2rem;
+    }
+
+    .no-books {
+      @include font(20, noto-bold, #fff);
+      margin-bottom: 2rem;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .books {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      overflow-x: auto;
+      .book {
+        height: 50vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        min-width: 25vw;
+        margin-right: 2vw;
+        .thumbnail {
+          width: 100%;
+          height: 40vh;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 2vw;
+        }
+        .title {
+          color: #fff;
+          margin-top: 1rem;
+          @include font(20, noto-bold, #fff);
+          text-align: left;
+          width: 100%;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+
+  .info-tab {
+    margin: 5rem 0;
+    @include flex-container(center, center);
+    .info-content {
+      width: 70vw;
+      @include flex-container(center, space-evenly);
+      .desc {
+        .header {
+          @include font(30, noto-bold, #011f27);
+          line-height: 1.12;
+          margin-bottom: 1rem;
+        }
+        .sub-text {
+          @include font(20, roboto, #011f27);
+          line-height: 1.3;
+        }
+      }
+    }
+  }
+}

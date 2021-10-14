@@ -1,1 +1,50 @@
-<div class="user-profile-component"></div>
+<div class="user-profile-component">
+  <div class="title-text">
+    <div class="title">
+      Your all-time companion <br />
+      for open source books
+    </div>
+    <div class="desc">
+      Access over
+      <span>20 million+</span> diverse genres books anytime anywhere
+    </div>
+  </div>
+
+  <div class="searched-books-bar">
+    <div class="text" *ngIf="category && filteredBooks.length">
+      Showing Results for {{ category?.category }} ({{ filteredBooks.length }})
+    </div>
+
+    <div class="books" *ngIf="filteredBooks?.length">
+      <div class="book" *ngFor="let book of filteredBooks">
+        <div class="thumbnail">
+          <img src="assets/images/thumbnail/{{ book.thumbnail }}" alt="" />
+        </div>
+
+        <div class="title">{{ book?.name }}</div>
+      </div>
+    </div>
+
+    <div class="no-books" *ngIf="!filteredBooks.length">
+      No Books Available for category {{ category?.category }} <br />
+      Please Stay Tuned We might Update Soon
+    </div>
+  </div>
+
+  <div class="info-tab">
+    <div class="info-content">
+      <div class="image">
+        <img src="assets/images/home/books.png" alt="" />
+      </div>
+      <div class="desc">
+        <div class="header">
+          Search different Books,Genres, <br />documents and research papers
+        </div>
+        <div class="sub-text">
+          we are open source library believing that <br />
+          knowledge should be accessible to all.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

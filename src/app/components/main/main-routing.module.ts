@@ -24,6 +24,9 @@ const routes: Routes = [
           import('./components/user-profile/user-profile.module').then(
             (u) => u.UserProfileModule
           ),
+        data: {
+          isProfile: true,
+        },
       },
     ],
   },

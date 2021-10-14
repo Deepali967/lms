@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,6 +10,7 @@ export class TitleBarComponent implements OnInit {
   showCategoriesPopup = false;
   showLoginForm = false;
   showRegisterForm = false;
+  @Input() headerConfig;
 
   constructor(private router: Router) {}
 

@@ -21,7 +21,15 @@
           id=""
         />
       </div>
-      <div class="submit" [class.disabled]="!loginForm?.valid">Login</div>
+      <div
+        class="submit"
+        (click)="login()"
+        [class.disabled]="!loginForm?.valid"
+      >
+        Login
+      </div>
     </form>
+
+    <div class="error">{{ error }}</div>
   </div>
 </div>

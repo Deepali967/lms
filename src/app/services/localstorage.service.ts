@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { BOOKS } from 'src/assets/constants/books';
 import { SEARCHES } from 'src/assets/constants/search';
 
@@ -6,6 +7,9 @@ import { SEARCHES } from 'src/assets/constants/search';
   providedIn: 'root',
 })
 export class LocalstorageService {
+  isAuthenticated = false;
+  selectedCategory: Subject<any> = new Subject();
+
   constructor() {}
 
   setUserSearches() {
@@ -33,5 +37,17 @@ export class LocalstorageService {
 
   getUserCredentials() {
     return JSON.parse(localStorage.getItem('credentials'));
+  }
+
+  setAuthenticationFlag(flag) {
+    localStorage.setItem('isAuthenticated', JSON.stringify(flag));
+  }
+
+  getAuthenticationFlag() {
+    return JSON.parse(localStorage.getItem('isAuthenticated'));
+  }
+
+  setSelectedCategory(category) {
+    this.selectedCategory.next(category);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LocalstorageService } from 'src/app/services/localstorage.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private localstorageService: LocalstorageService
+    private localstorageService: LocalstorageService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +36,12 @@ export class RegisterComponent implements OnInit {
     };
 
     this.localstorageService.setUserCredentials(payload);
+
+    this.localstorageService.setAuthenticationFlag(true);
+
+    this.router.navigate(['/main/user-profile']);
+
+    this.closePopup.emit();
   }
 
   handleKeyUp(field) {

@@ -9,12 +9,20 @@
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
   @include flex-container(center, center);
+
+  .error {
+    @include font(20, noto, #dc143c);
+    margin: 0.3rem 0 0 0.2rem;
+    animation: fade-in 0.3s ease-in-out;
+    text-align: center;
+  }
   .form {
     background: #fff;
     padding: 2rem;
     border-radius: 1rem;
     width: 30vw;
     position: relative;
+    animation: fade-in 0.5s ease-in-out;
     .title {
       @include font(34, roboto-bold, #011f27);
       text-align: center;

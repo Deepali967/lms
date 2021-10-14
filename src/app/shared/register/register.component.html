@@ -36,6 +36,7 @@
       </div>
       <div
         class="submit"
+        (click)="register()"
         [class.disabled]="!registerForm?.valid || nameError || emailError"
       >
         Register

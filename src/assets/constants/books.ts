@@ -24,7 +24,7 @@ export const BOOKS = [
     thumbnail: 'cycling.jpg',
   },
   {
-    category: 'Food',
+    category: 'food',
     name: 'The Secrets of Chocolate',
     pdfUrl: 'food.pdf',
     thumbnail: 'chocolate.jpeg',

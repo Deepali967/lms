@@ -1,6 +1,10 @@
 <div class="category-component">
   <div class="categories">
-    <div class="category" *ngFor="let category of categories">
+    <div
+      class="category"
+      (click)="select(category)"
+      *ngFor="let category of categories"
+    >
       {{ category?.category }}
     </div>
   </div>
