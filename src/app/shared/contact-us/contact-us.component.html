@@ -1,1 +1,17 @@
-<p>contact-us works!</p>
+<div class="contact-us-component">
+  <div class="sections">
+    <div class="section" *ngFor="let section of contactNav">
+      <div class="title">{{ section?.title }}</div>
+      <div class="options">
+        <div
+          class="option"
+          (click)="navigate(option?.navUrl)"
+          *ngFor="let option of section?.options"
+        >
+          {{ option?.text }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">Copyright@2021 Bookbar</div>
+</div>

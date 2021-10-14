@@ -19,6 +19,8 @@
     font-family: roboto-light;
   } @else if $family==roboto-thin {
     font-family: roboto-thin;
+  } @else if $family==roboto-bold {
+    font-family: roboto-bold;
   } @else if $family==noto {
     font-family: noto;
   } @else if $family==noto-bold {

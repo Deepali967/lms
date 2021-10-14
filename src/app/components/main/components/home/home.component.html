@@ -14,12 +14,49 @@
     <div class="search-input">
       <img src="assets/images/header/search.png" alt="" />
       <div class="input">
-        <input type="text" placeholder="Try Searching 'Fiction Books'" />
+        <input type="text" placeholder="Try Searching 'Fiction'" />
       </div>
     </div>
   </div>
 
   <div class="popuplar-searches">
-    <div class="title">Popular Searches</div>
+    <div class="search-content">
+      <div class="title">Popular Searches</div>
+      <div class="searches">
+        <div class="search" *ngFor="let search of popularSearches">
+          <img src="assets/images/icons/{{ search.icon }}" alt="" />
+          {{ search?.category }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="searched-books-bar">
+    <div class="books">
+      <div class="book" *ngFor="let book of allBooks">
+        <div class="thumbnail">
+          <img src="assets/images/thumbnail/{{ book.thumbnail }}" alt="" />
+        </div>
+
+        <div class="title">{{ book?.name }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-tab">
+    <div class="info-content">
+      <div class="image">
+        <img src="assets/images/home/books.png" alt="" />
+      </div>
+      <div class="desc">
+        <div class="header">
+          Search different Books,Genres, <br />documents and research papers
+        </div>
+        <div class="sub-text">
+          we are open source library believing that <br />
+          knowledge should be accessible to all.
+        </div>
+      </div>
+    </div>
   </div>
 </div>

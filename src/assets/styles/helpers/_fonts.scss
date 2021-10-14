@@ -23,6 +23,12 @@
 }
 
 @font-face {
+  font-family: "roboto-bold";
+  src: url(~src/assets/fonts/roboto/roboto-bold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
   font-family: "noto";
   src: url(~src/assets/fonts/noto/noto.ttf) format("truetype");
   font-weight: 700;

@@ -1,0 +1,33 @@
+@import "~src/assets/styles/helpers/mixins";
+
+.contact-us-component {
+  background: #d9d5d2;
+
+  .sections {
+    display: flex;
+    padding: 4rem 2rem;
+    justify-content: center;
+
+    .section {
+      margin: 0 5rem;
+      .title {
+        @include font(25, roboto-bold, #000);
+        margin-bottom: 1rem;
+      }
+      .options {
+        .option {
+          @include font(16, roboto, #000);
+          margin-bottom: 0.5rem;
+          margin-left: 0.1rem;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    border-top: 0.13rem solid rgba(9, 30, 66, 0.2);
+    padding: 1rem 0;
+    @include font(18, roboto, #000);
+  }
+}
