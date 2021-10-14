@@ -1,0 +1,27 @@
+<div class="login-component">
+  <div class="form">
+    <div class="title">Login</div>
+    <div class="close" (click)="close()">
+      <img src="assets/images/login/close.png" alt="" />
+    </div>
+    <form class="register-form" [formGroup]="loginForm">
+      <div class="field email">
+        <input
+          type="email"
+          placeholder="Enter Email ID"
+          formControlName="emailId"
+          id=""
+        />
+      </div>
+      <div class="field password">
+        <input
+          type="password"
+          placeholder="Enter Password"
+          formControlName="password"
+          id=""
+        />
+      </div>
+      <div class="submit" [class.disabled]="!loginForm?.valid">Login</div>
+    </form>
+  </div>
+</div>

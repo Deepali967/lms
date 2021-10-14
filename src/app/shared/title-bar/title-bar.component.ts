@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class TitleBarComponent implements OnInit {
   showCategoriesPopup = false;
+  showLoginForm = false;
+  showRegisterForm = false;
 
   constructor(private router: Router) {}
 
@@ -15,6 +17,14 @@ export class TitleBarComponent implements OnInit {
 
   toggleCategoriesPopup() {
     this.showCategoriesPopup = !this.showCategoriesPopup;
+  }
+
+  toggleLoginForm() {
+    this.showLoginForm = !this.showLoginForm;
+  }
+
+  toggleRegisterForm() {
+    this.showRegisterForm = !this.showRegisterForm;
   }
 
   register() {

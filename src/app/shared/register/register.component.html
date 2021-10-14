@@ -1,0 +1,45 @@
+<div class="register-component">
+  <div class="form">
+    <div class="title">Register</div>
+    <div class="close" (click)="close()">
+      <img src="assets/images/login/close.png" alt="" />
+    </div>
+    <form class="register-form" [formGroup]="registerForm">
+      <div class="field name">
+        <input
+          type="text"
+          (keyup)="handleKeyUp('name')"
+          placeholder="Enter Name"
+          formControlName="name"
+          id=""
+        />
+
+        <div class="error">{{ nameError }}</div>
+      </div>
+      <div class="field email">
+        <input
+          type="email"
+          (keyup)="handleKeyUp('email')"
+          placeholder="Enter Email ID"
+          formControlName="emailId"
+          id=""
+        />
+        <div class="error">{{ emailError }}</div>
+      </div>
+      <div class="field password">
+        <input
+          type="password"
+          placeholder="Enter Password"
+          formControlName="password"
+          id=""
+        />
+      </div>
+      <div
+        class="submit"
+        [class.disabled]="!registerForm?.valid || nameError || emailError"
+      >
+        Register
+      </div>
+    </form>
+  </div>
+</div>

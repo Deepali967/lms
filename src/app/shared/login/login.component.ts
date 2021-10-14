@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  @Output() closePopup: EventEmitter<any> = new EventEmitter();
 
   constructor(private fb: FormBuilder) {}
 
@@ -16,5 +17,9 @@ export class LoginComponent implements OnInit {
       emailId: ['', [Validators.email, Validators.required]],
       password: ['', Validators.required],
     });
+  }
+
+  close() {
+    this.closePopup.emit();
   }
 }

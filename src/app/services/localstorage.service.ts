@@ -26,4 +26,12 @@ export class LocalstorageService {
   getAllBooks() {
     return JSON.parse(localStorage.getItem('allbooks'));
   }
+
+  setUserCredentials(credentials) {
+    localStorage.setItem('credentials', JSON.stringify(credentials));
+  }
+
+  getUserCredentials() {
+    return JSON.parse(localStorage.getItem('credentials'));
+  }
 }

@@ -18,6 +18,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./components/home/home.module').then((h) => h.HomeModule),
       },
+      {
+        path: 'user-profile',
+        loadChildren: () =>
+          import('./components/user-profile/user-profile.module').then(
+            (u) => u.UserProfileModule
+          ),
+      },
     ],
   },
 ];
