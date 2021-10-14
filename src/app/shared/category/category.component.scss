@@ -1,0 +1,17 @@
+@import "~src/assets/styles/helpers/mixins";
+
+.category-component {
+  width: 100%;
+  background: #fff;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding: 1rem 2rem;
+  animation: slide-down 0.5s ease-in-out;
+  .category {
+    @include font(15, roboto, #000);
+    margin: 0.5rem 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

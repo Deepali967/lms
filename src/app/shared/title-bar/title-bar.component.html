@@ -1,14 +1,18 @@
 <div class="title-bar">
   <div class="left">
     <div class="name">BookBar</div>
-    <div class="browse">
+    <div class="browse" (click)="toggleCategoriesPopup()">
       Browse Categories
       <span><img src="assets/images/title/nav.png" alt="" /></span>
     </div>
   </div>
 
   <div class="right">
-    <div class="login">Sign Up</div>
-    <div class="already-user">Already a user? Log in</div>
+    <div class="login" (click)="register()">Sign Up</div>
+    <div class="already-user" (click)="login()">Already a user? Log in</div>
   </div>
+</div>
+
+<div class="categories" *ngIf="showCategoriesPopup">
+  <app-category></app-category>
 </div>
