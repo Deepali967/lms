@@ -7,6 +7,7 @@ import { CategoryComponent } from './category/category.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IssueBookComponent } from './issue-book/issue-book.component';
 
 const components = [
   TitleBarComponent,
@@ -15,6 +16,7 @@ const components = [
   CategoryComponent,
   LoginComponent,
   RegisterComponent,
+  IssueBookComponent,
 ];
 
 @NgModule({

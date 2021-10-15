@@ -43,6 +43,16 @@
       @include font(14, roboto-medium, #fff);
     }
 
+    .history {
+      margin-right: 5vw;
+      background-color: #bf9889;
+      padding: 0.4rem 0.7rem;
+      border: none;
+      outline: none;
+      border-radius: 0.3rem;
+      @include font(14, roboto-medium, #fff);
+    }
+
     .already-user {
       @include font(14, roboto-medium, #000);
     }

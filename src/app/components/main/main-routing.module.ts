@@ -28,6 +28,19 @@ const routes: Routes = [
           isProfile: true,
         },
       },
+
+      {
+        path: 'history',
+        loadChildren: () =>
+          import('./components/history/history.module').then(
+            (h) => h.HistoryModule
+          ),
+
+        data: {
+          isHistory: true,
+          isProfile: true,
+        },
+      },
     ],
   },
 ];

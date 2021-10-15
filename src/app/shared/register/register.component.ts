@@ -14,6 +14,8 @@ export class RegisterComponent implements OnInit {
   emailError = '';
   @Output() closePopup: EventEmitter<any> = new EventEmitter();
 
+  @Output() loginForm: EventEmitter<any> = new EventEmitter();
+
   constructor(
     private fb: FormBuilder,
     private localstorageService: LocalstorageService,
@@ -91,5 +93,10 @@ export class RegisterComponent implements OnInit {
 
   close() {
     this.closePopup.emit();
+  }
+
+  login() {
+    this.closePopup.emit();
+    this.loginForm.emit();
   }
 }

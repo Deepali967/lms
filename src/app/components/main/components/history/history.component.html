@@ -1,0 +1,21 @@
+<div class="history-component">
+  <div class="books">
+    <div
+      class="book"
+      (click)="openBook(book)"
+      [class.expired]="book?.expired"
+      *ngFor="let book of issuedBooks"
+    >
+      <div class="thumbnail">
+        <img src="assets/images/thumbnail/{{ book?.thumbnail }}" alt="" />
+      </div>
+
+      <div class="text">{{ book?.name }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="iframe-component" [class.hidden]="!showIframeElement">
+  <div class="title">{{ selectedBook?.name }}</div>
+  <iframe #iframeElement></iframe>
+</div>

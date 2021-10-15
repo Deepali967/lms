@@ -1,7 +1,11 @@
 <div class="title-bar">
   <div class="left">
     <div class="name">BookBar</div>
-    <div class="browse" (click)="toggleCategoriesPopup()">
+    <div
+      class="browse"
+      *ngIf="!headerConfig?.isHistory"
+      (click)="toggleCategoriesPopup()"
+    >
       Browse Categories
       <span><img src="assets/images/title/nav.png" alt="" /></span>
     </div>
@@ -15,7 +19,14 @@
   </div>
 
   <div class="right" *ngIf="headerConfig?.isProfile">
-    <img src="assets/images/title/avatar.png" alt="" />
+    <div
+      class="history"
+      *ngIf="!headerConfig?.isHistory"
+      (click)="checkMyHistory()"
+    >
+      My history
+    </div>
+    <img (click)="logout()" src="assets/images/title/avatar.png" alt="" />
   </div>
 </div>
 
@@ -24,9 +35,15 @@
 </div>
 
 <div class="login" *ngIf="showLoginForm">
-  <app-login (closePopup)="toggleLoginForm()"></app-login>
+  <app-login
+    (registerForm)="toggleRegisterForm()"
+    (closePopup)="toggleLoginForm()"
+  ></app-login>
 </div>
 
 <div class="register" *ngIf="showRegisterForm">
-  <app-register (closePopup)="toggleRegisterForm()"></app-register>
+  <app-register
+    (loginForm)="toggleLoginForm()"
+    (closePopup)="toggleRegisterForm()"
+  ></app-register>
 </div>

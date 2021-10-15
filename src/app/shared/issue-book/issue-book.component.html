@@ -1,0 +1,36 @@
+<div class="issue-book-component">
+  <div class="form">
+    <div class="title">Issue book</div>
+    <div class="close" (click)="close()">
+      <img src="assets/images/login/close.png" alt="" />
+    </div>
+    <form class="register-form" [formGroup]="issueForm">
+      <div class="field password">
+        <input
+          type="text"
+          placeholder="Book Name"
+          formControlName="bookname"
+          id=""
+          readonly
+        />
+      </div>
+      <div class="field password">
+        <input
+          type="datetime-local"
+          placeholder="Enter End Date"
+          formControlName="endDate"
+          id=""
+        />
+      </div>
+      <div
+        class="submit"
+        (click)="issueBook()"
+        [class.disabled]="!issueForm?.valid"
+      >
+        Issue Book
+      </div>
+    </form>
+
+    <div class="error">{{ error }}</div>
+  </div>
+</div>

@@ -25,6 +25,30 @@
     }
   }
 
+  .error {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    @include flex-container(center, center);
+
+    .error-text {
+      background: #fff;
+      @include font(30, noto, #dc143c);
+      margin: 0.3rem 0 0 0.2rem;
+      animation: fade-in 0.3s ease-in-out;
+      text-align: center;
+      width: 30vw;
+      padding: 5rem;
+      line-height: 1.5;
+      border-radius: 4vw;
+    }
+  }
+
   .searched-books-bar {
     background: #6d90a6;
     margin-top: 2rem;
@@ -49,7 +73,7 @@
       align-items: center;
       overflow-x: auto;
       .book {
-        height: 50vh;
+        height: 48vh;
         display: flex;
         justify-content: flex-start;
         align-items: center;

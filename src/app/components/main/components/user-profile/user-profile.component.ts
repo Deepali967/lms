@@ -10,6 +10,9 @@ export class UserProfileComponent implements OnInit, AfterViewInit {
   allBooks;
   category;
   filteredBooks;
+  bookName;
+  showIssueBookPopup = false;
+  error = '';
   constructor(private localstorageService: LocalstorageService) {}
 
   ngOnInit(): void {
@@ -27,5 +30,24 @@ export class UserProfileComponent implements OnInit, AfterViewInit {
     this.filteredBooks = this.allBooks.filter(
       (b) => b.category === this.category.id
     );
+  }
+
+  issueBook(book) {
+    if (this.localstorageService.checkIfBookAlreadyExists(book)) {
+      this.error = 'Book Already Issued. Please check History';
+
+      setTimeout(() => {
+        this.error = '';
+      }, 2000);
+
+      return;
+    }
+
+    this.bookName = book;
+    this.showIssueBookPopup = true;
+  }
+
+  toggleIssueBookPopup() {
+    this.showIssueBookPopup = !this.showIssueBookPopup;
   }
 }

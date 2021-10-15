@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocalstorageService } from 'src/app/services/localstorage.service';
 
 @Component({
   selector: 'app-title-bar',
@@ -12,11 +13,19 @@ export class TitleBarComponent implements OnInit {
   showRegisterForm = false;
   @Input() headerConfig;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private localstorageService: LocalstorageService
+  ) {}
 
   ngOnInit(): void {}
 
   toggleCategoriesPopup() {
+    if (!this.localstorageService.getAuthenticationFlag()) {
+      this.toggleLoginForm();
+      return;
+    }
+
     this.showCategoriesPopup = !this.showCategoriesPopup;
   }
 
@@ -28,11 +37,12 @@ export class TitleBarComponent implements OnInit {
     this.showRegisterForm = !this.showRegisterForm;
   }
 
-  register() {
-    this.router.navigate(['/authentication/register']);
+  checkMyHistory() {
+    this.router.navigate(['/main/history']);
   }
 
-  login() {
-    this.router.navigate(['/authentication/login']);
+  logout() {
+    this.localstorageService.setAuthenticationFlag(false);
+    this.router.navigate(['/main']);
   }
 }

@@ -10,6 +10,8 @@ export class LocalstorageService {
   isAuthenticated = false;
   selectedCategory: Subject<any> = new Subject();
 
+  issuedBooks = [];
+
   constructor() {}
 
   setUserSearches() {
@@ -21,6 +23,28 @@ export class LocalstorageService {
 
   getPopulaSearches() {
     return JSON.parse(localStorage.getItem('searches'));
+  }
+
+  addBooks(book) {
+    this.issuedBooks = this.getIssuedBooks() || [];
+    this.issuedBooks.push(book);
+    localStorage.setItem('issuedBooks', JSON.stringify(this.issuedBooks));
+  }
+
+  getIssuedBooks() {
+    return JSON.parse(localStorage.getItem('issuedBooks'));
+  }
+
+  checkIfBookAlreadyExists(book) {
+    var existingBook = this.getIssuedBooks().filter(
+      (b) => b.name === book.name
+    );
+
+    if (existingBook.length) {
+      return true;
+    }
+
+    return false;
   }
 
   setAllBooks() {

@@ -11,6 +11,7 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   @Output() closePopup: EventEmitter<any> = new EventEmitter();
+  @Output() registerForm: EventEmitter<any> = new EventEmitter();
   credentials;
   error = '';
   constructor(
@@ -57,5 +58,10 @@ export class LoginComponent implements OnInit {
 
       this.closePopup.emit();
     }
+  }
+
+  register() {
+    this.closePopup.emit();
+    this.registerForm.emit();
   }
 }

@@ -1,0 +1,64 @@
+@import "~src/assets/styles/helpers/mixins";
+
+.history-component {
+  height: 56vh;
+  padding: 1rem;
+  .books {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    .book {
+      height: 25vh;
+      padding: 1rem 1rem 2rem 1rem;
+      /* padding: 2rem; */
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      background: #8bb1c9;
+      margin: 0 1.5rem;
+      .thumbnail {
+        height: 90%;
+      }
+
+      .text {
+        @include font(20, roboto-bold, #fff);
+        margin: 1rem;
+      }
+
+      &.expired {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.iframe-component {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  @include flex-container(center, flex-start, column);
+
+  &.hidden {
+    display: none;
+  }
+
+  .title {
+    @include font(35, noto-bold, #bf9889);
+    margin: 2rem;
+  }
+
+  iframe {
+    height: 90%;
+    width: 100%;
+  }
+}
